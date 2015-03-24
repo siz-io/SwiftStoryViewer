@@ -13,6 +13,8 @@
 		F99E690F1AB89AEC000E194D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F99E690E1AB89AEC000E194D /* Images.xcassets */; };
 		F99E69121AB89AEC000E194D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99E69101AB89AEC000E194D /* LaunchScreen.xib */; };
 		F99E691E1AB89AEC000E194D /* StoryViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E691D1AB89AEC000E194D /* StoryViewerTests.swift */; };
+		F99E692A1AB99A88000E194D /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E69291AB99A88000E194D /* AVPlayerView.swift */; };
+		F99E692C1AB99DC4000E194D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F99E692B1AB99DC4000E194D /* AVFoundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		F99E69171AB89AEC000E194D /* StoryViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoryViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99E691C1AB89AEC000E194D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F99E691D1AB89AEC000E194D /* StoryViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewerTests.swift; sourceTree = "<group>"; };
+		F99E69291AB99A88000E194D /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
+		F99E692B1AB99DC4000E194D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F99E692C1AB99DC4000E194D /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +64,7 @@
 		F99E68F91AB89AEC000E194D = {
 			isa = PBXGroup;
 			children = (
+				F99E692B1AB99DC4000E194D /* AVFoundation.framework */,
 				F99E69041AB89AEC000E194D /* StoryViewer */,
 				F99E691A1AB89AEC000E194D /* StoryViewerTests */,
 				F99E69031AB89AEC000E194D /* Products */,
@@ -83,6 +89,7 @@
 				F99E690E1AB89AEC000E194D /* Images.xcassets */,
 				F99E69101AB89AEC000E194D /* LaunchScreen.xib */,
 				F99E69051AB89AEC000E194D /* Supporting Files */,
+				F99E69291AB99A88000E194D /* AVPlayerView.swift */,
 			);
 			path = StoryViewer;
 			sourceTree = "<group>";
@@ -212,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F99E692A1AB99A88000E194D /* AVPlayerView.swift in Sources */,
 				F99E690A1AB89AEC000E194D /* ViewController.swift in Sources */,
 				F99E69081AB89AEC000E194D /* AppDelegate.swift in Sources */,
 			);
@@ -338,8 +346,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = StoryViewer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -349,8 +358,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = StoryViewer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -409,6 +419,7 @@
 				F99E69231AB89AEC000E194D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F99E69241AB89AEC000E194D /* Build configuration list for PBXNativeTarget "StoryViewerTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +428,7 @@
 				F99E69261AB89AEC000E194D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

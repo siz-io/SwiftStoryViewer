@@ -7,33 +7,34 @@
 //
 
 import UIKit
-import MediaPlayer
+import AVFoundation
+import Foundation
 
 class ViewController: UIViewController {
 
-    var moviePlayer : MPMoviePlayerController?
+    @IBOutlet weak var topLeftVideo: AVPlayerView!
+    @IBOutlet weak var topRightVideo: AVPlayerView!
+    @IBOutlet weak var bottomLeftVideo: AVPlayerView!
+    @IBOutlet weak var bottomRightVideo: AVPlayerView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playVideo()
-
+        loadStory("1426589791593b2493fba815")
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func playVideo() {
-       let url = NSURL(string: "http://fun.siz.io/stories/1425445499218efb0f23ec97/2.mp4")
-       moviePlayer = MPMoviePlayerController(contentURL: url)
-       if let player = moviePlayer {
-            player.view.frame = CGRect(x: 0, y: 0, width: 352, height: 226)
-            self.view.addSubview(player.view)
-            player.controlStyle = MPMovieControlStyle.None
-            player.repeatMode = MPMovieRepeatMode.One
-            player.play()
-        }
+    func loadStory(id: String)
+    {
+        topLeftVideo.loadVideo("http://fun.siz.io/stories/\(id)/0.mp4")
+        topRightVideo.loadVideo("http://fun.siz.io/stories/\(id)/1.mp4")
+        bottomLeftVideo.loadVideo("http://fun.siz.io/stories/\(id)/2.mp4")
+        bottomRightVideo.loadVideo("http://fun.siz.io/stories/\(id)/3.mp4")
     }
 }
 
