@@ -15,37 +15,39 @@ class AVPlayerView : UIView {
         return AVPlayerLayer.self
     }
     
-    var videoPlayer: AVPlayer? {
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    private var videoPlayer: AVPlayer? {
         set {
             let layer: AVPlayerLayer = self.layer as AVPlayerLayer
             layer.player = newValue
+            layer.videoGravity = AVLayerVideoGravityResizeAspect
         }
         get {
             let layer: AVPlayerLayer = self.layer as AVPlayerLayer
             return layer.player
         }
     }
-    var videoPlayerItem: AVPlayerItem?
+    private var videoPlayerItem: AVPlayerItem?
     
-    func loadVideo(sourceURL: String) {
+    func loadVideo(sourceURL: String)
+    {
         let url = NSURL(string: sourceURL)
         videoPlayerItem = AVPlayerItem(URL: url)
         if let playerItem = videoPlayerItem {
             videoPlayer = AVPlayer(playerItem: playerItem)
             if let player = videoPlayer {
                 player.actionAtItemEnd = .None
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: "playerItemDidReachEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayer?.currentItem)
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadVideo:", name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayer?.currentItem)
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadVideo:", name: UIApplicationDidBecomeActiveNotification, object: .None)
                 player.play()
             }
         }
     }
     
-    func playerItemDidReachEnd(notification: NSNotification)
-    {
-        restartVideo()
-    }
-    
-    func restartVideo()
+    func reloadVideo(notification: NSNotification)
     {
         if let player = videoPlayer {
             player.seekToTime(CMTimeMake(0, 1))
