@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F95D45551AC41A7F00ACE028 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D45541AC41A7F00ACE028 /* StoryViewController.swift */; };
 		F99E69081AB89AEC000E194D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E69071AB89AEC000E194D /* AppDelegate.swift */; };
 		F99E690A1AB89AEC000E194D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E69091AB89AEC000E194D /* ViewController.swift */; };
 		F99E690D1AB89AEC000E194D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99E690B1AB89AEC000E194D /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F95D45541AC41A7F00ACE028 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		F99E69021AB89AEC000E194D /* StoryViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99E69061AB89AEC000E194D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F99E69071AB89AEC000E194D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				F99E69071AB89AEC000E194D /* AppDelegate.swift */,
 				F99E69091AB89AEC000E194D /* ViewController.swift */,
 				F99E690B1AB89AEC000E194D /* Main.storyboard */,
+				F95D45541AC41A7F00ACE028 /* StoryViewController.swift */,
 				F99E690E1AB89AEC000E194D /* Images.xcassets */,
 				F99E69101AB89AEC000E194D /* LaunchScreen.xib */,
 				F99E69051AB89AEC000E194D /* Supporting Files */,
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F95D45551AC41A7F00ACE028 /* StoryViewController.swift in Sources */,
 				F99E692A1AB99A88000E194D /* AVPlayerView.swift in Sources */,
 				F99E690A1AB89AEC000E194D /* ViewController.swift in Sources */,
 				F99E69081AB89AEC000E194D /* AppDelegate.swift in Sources */,
