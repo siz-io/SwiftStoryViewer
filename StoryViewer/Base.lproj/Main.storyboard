@@ -24,13 +24,17 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="b2j-el-Blr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="M9R-pH-Q0j"/>
                             <constraint firstAttribute="trailing" secondItem="b2j-el-Blr" secondAttribute="trailing" id="hZH-Uf-gYg"/>
                             <constraint firstItem="b2j-el-Blr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oKQ-VT-WDa"/>
                             <constraint firstItem="b2j-el-Blr" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="zOu-va-nE3"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Lfr-lo-5Ix" appends="YES" id="qwe-Af-fyX"/>
+                        </connections>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -39,6 +43,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Lfr-lo-5Ix">
+                    <connections>
+                        <action selector="dragStory:" destination="BYZ-38-t0r" id="ULh-t1-q1v"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="378" y="453"/>
         </scene>

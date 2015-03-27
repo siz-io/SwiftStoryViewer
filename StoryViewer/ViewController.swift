@@ -21,12 +21,42 @@ class ViewController: UIViewController {
         storyViewController.loadStory("1426589791593b2493fba815")
     }
     
+    private struct Constants {
+        static let translationScale: CGFloat = 2
+        static let timeToReturnToIdentity = 0.5
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let storyViewController = segue.destinationViewController as? StoryViewController {
             self.storyViewController = storyViewController
         }
     }
+    @IBAction func dragStory(gesture: UIPanGestureRecognizer) {
+        switch gesture.state {
+        case .Ended:
+            UIView.animateWithDuration(
+                Constants.timeToReturnToIdentity,
+                delay: 0,
+                options: UIViewAnimationOptions.CurveEaseOut,
+                animations: {
+                    self.storyViewContainer.transform = CGAffineTransformIdentity
+                },
+                completion: .None
+            )
+            
+        case .Changed:
+            let translation = gesture.translationInView(storyViewContainer)
+            let xOffset = translation.x * Constants.translationScale
+            if xOffset != 0 {
+                self.storyViewContainer.transform = CGAffineTransformMakeTranslation(xOffset,0)
+            }
+        default: break
+        }
+    }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 }
 
 
