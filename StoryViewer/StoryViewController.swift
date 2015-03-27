@@ -17,10 +17,9 @@ class StoryViewController: UIViewController {
         
     func loadStory(id: String)
     {
-            topLeftVideo.loadVideo("http://fun.siz.io/stories/\(id)/0.mp4")
-            topRightVideo.loadVideo("http://fun.siz.io/stories/\(id)/1.mp4")
-            bottomLeftVideo.loadVideo("http://fun.siz.io/stories/\(id)/2.mp4")
-            bottomRightVideo.loadVideo("http://fun.siz.io/stories/\(id)/3.mp4")
-       
+        topLeftVideo.loadVideo("http://fun.siz.io/stories/\(id)/0.mp4")
+        topRightVideo.loadVideo("http://fun.siz.io/stories/\(id)/1.mp4")
+        bottomLeftVideo.loadVideo("http://fun.siz.io/stories/\(id)/2.mp4")
+        bottomRightVideo.loadVideo("http://fun.siz.io/stories/\(id)/3.mp4")
     }
 }
