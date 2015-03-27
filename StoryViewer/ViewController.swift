@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
     
     private struct Constants {
-        static let translationScale: CGFloat = 2
+        static let translationScale: CGFloat = 1.5
         static let timeToReturnToIdentity = 0.5
     }
     
