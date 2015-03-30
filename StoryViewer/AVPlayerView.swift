@@ -40,14 +40,12 @@ class AVPlayerView : UIView {
             videoPlayer = AVPlayer(playerItem: playerItem)
             if let player = videoPlayer {
                 player.actionAtItemEnd = .None
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadVideo:", name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayer?.currentItem)
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadVideo:", name: UIApplicationDidBecomeActiveNotification, object: .None)
-                player.play()
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "play", name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayer?.currentItem)
             }
         }
     }
     
-    func reloadVideo(notification: NSNotification)
+    func play()
     {
         if let player = videoPlayer {
             player.seekToTime(CMTimeMake(0, 1))

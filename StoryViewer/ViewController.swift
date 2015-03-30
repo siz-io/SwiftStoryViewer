@@ -13,19 +13,26 @@ import Foundation
 class ViewController: UIViewController {
 
     @IBOutlet weak var storyViewContainer: UIView!
+    @IBOutlet weak var containerView: UIView!
     
     var storyViewController: StoryViewController!
     
-    let storyIds = ["1426589791593b2493fba815","1427469323995ed5cd418e9f","14274674523774c0ce58fca8","142746486623048953be9ce8","1427463698833a8039eef668","14274635585026374000e5fa","14274587736024eea248c438","1427457701047780790e00b1","1427456107646465bc0c8c5d","14274553480930af2fe62e48","142745454635644e9cb4236b"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNewStory()
+        NSNotificationCenter.defaultCenter().addObserver(storyViewController, selector: "play", name: UIApplicationDidBecomeActiveNotification, object: .None)
     }
     
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        storyViewController.play()
+    }
+    
+    
     func loadNewStory() {
-        let randomIndex = Int(arc4random_uniform(UInt32(storyIds.count)))
-        storyViewController.loadStory(storyIds[randomIndex])
+        storyViewController.loadStory(Story.getRandomStory())
     }
     
     private struct Constants {
@@ -58,6 +65,7 @@ class ViewController: UIViewController {
                     },
                     completion: { (result:Bool) in
                         self.loadNewStory()
+                        self.storyViewController.play()
                         self.returnToIdentity()
                     }
                 )

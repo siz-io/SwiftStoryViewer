@@ -14,12 +14,28 @@ class StoryViewController: UIViewController {
     @IBOutlet weak var topRightVideo: AVPlayerView!
     @IBOutlet weak var bottomLeftVideo: AVPlayerView!
     @IBOutlet weak var bottomRightVideo: AVPlayerView!
+    
+    var model: Story? {
+        didSet {
+            if let story = model {
+                topLeftVideo.loadVideo(story.boxes[0])
+                topRightVideo.loadVideo(story.boxes[1])
+                bottomLeftVideo.loadVideo(story.boxes[2])
+                bottomRightVideo.loadVideo(story.boxes[3])
+            }
+        }
+    }
         
-    func loadStory(id: String)
+    func loadStory(story: Story)
     {
-        topLeftVideo.loadVideo("http://fun.siz.io/stories/\(id)/0.mp4")
-        topRightVideo.loadVideo("http://fun.siz.io/stories/\(id)/1.mp4")
-        bottomLeftVideo.loadVideo("http://fun.siz.io/stories/\(id)/2.mp4")
-        bottomRightVideo.loadVideo("http://fun.siz.io/stories/\(id)/3.mp4")
+        model=story
+    }
+    
+    func play()
+    {
+        topLeftVideo.play()
+        topRightVideo.play()
+        bottomLeftVideo.play()
+        bottomRightVideo.play()
     }
 }
