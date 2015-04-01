@@ -50,32 +50,48 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-667" y="-352"/>
+            <point key="canvasLocation" x="-665" y="-344"/>
         </scene>
-        <!--Container View Controller-->
-        <scene sceneID="D5p-Be-iVe">
+        <!--Video View Controller-->
+        <scene sceneID="OMQ-SQ-wi0">
             <objects>
-                <viewController id="YNk-qd-xZ5" customClass="ContainerViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sZt-jh-YOQ" customClass="VideoViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2Sc-OB-ub2"/>
-                        <viewControllerLayoutGuide type="bottom" id="Pan-aj-s7v"/>
+                        <viewControllerLayoutGuide type="top" id="1tg-GG-fA9"/>
+                        <viewControllerLayoutGuide type="bottom" id="XSw-30-ujY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2Lg-Dg-FJv">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <view key="view" contentMode="scaleToFill" id="bZ5-l9-4Ex">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rp4-Sd-04s" customClass="AVPlayerView" customModule="StoryViewer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="8eD-2M-lyu">
+                                <rect key="frame" x="90" y="90" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rp4-Sd-04s" firstAttribute="bottom" secondItem="XSw-30-ujY" secondAttribute="top" id="4uI-ZH-9yl"/>
+                            <constraint firstItem="rp4-Sd-04s" firstAttribute="leading" secondItem="bZ5-l9-4Ex" secondAttribute="leading" id="4yb-Za-Jdr"/>
+                            <constraint firstAttribute="trailing" secondItem="rp4-Sd-04s" secondAttribute="trailing" id="ER9-7Q-rnF"/>
+                            <constraint firstItem="8eD-2M-lyu" firstAttribute="centerY" secondItem="rp4-Sd-04s" secondAttribute="centerY" id="XQX-nl-Wnn"/>
+                            <constraint firstItem="8eD-2M-lyu" firstAttribute="centerX" secondItem="rp4-Sd-04s" secondAttribute="centerX" id="diN-vo-2BM"/>
+                            <constraint firstItem="rp4-Sd-04s" firstAttribute="top" secondItem="bZ5-l9-4Ex" secondAttribute="top" id="rHP-ug-P6f"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="300" height="300"/>
+                    <size key="freeformSize" width="200" height="200"/>
                     <connections>
-                        <segue destination="ZJS-B5-Eji" kind="custom" identifier="embedStory2x2" id="E6y-Jp-0v2"/>
-                        <segue destination="ShT-ta-Hb1" kind="custom" identifier="embedStory1x4" id="HpG-2T-Zrl"/>
-                        <segue destination="Ppd-G9-hyF" kind="custom" identifier="embedStory4x1" id="zFt-0R-Ama"/>
+                        <outlet property="playerView" destination="rp4-Sd-04s" id="Mja-XX-ByX"/>
+                        <outlet property="spinner" destination="8eD-2M-lyu" id="UaI-yR-tvq"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PPD-1q-RWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gB5-Ko-tXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="249" y="-352"/>
+            <point key="canvasLocation" x="-46" y="173"/>
         </scene>
         <!--Story View 2x2-->
         <scene sceneID="MYr-6P-zcw">
@@ -89,59 +105,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSs-DL-eVW" customClass="AVPlayerView" customModule="StoryViewer" customModuleProvider="target">
-                                <rect key="frame" x="150" y="0.0" width="150" height="150"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ys0-UO-IKE" customClass="AVPlayerView" customModule="StoryViewer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="150" width="150" height="150"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BdA-Km-VYb" customClass="AVPlayerView" customModule="StoryViewer" customModuleProvider="target">
-                                <rect key="frame" x="150" y="150" width="150" height="150"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DzS-y4-oid" customClass="AVPlayerView" customModule="StoryViewer" customModuleProvider="target">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6A5-FW-Tyq">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <connections>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="firstVideo" id="CvX-Q2-a3u"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFS-gl-wXp">
+                                <rect key="frame" x="150" y="0.0" width="150" height="150"/>
+                                <connections>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="thirdVideo" id="aN6-hN-0A9"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7h-Xa-CNm">
+                                <rect key="frame" x="150" y="150" width="150" height="150"/>
+                                <connections>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="fourthVideo" id="6OD-kX-ShG"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Is-Td-sZu">
+                                <rect key="frame" x="0.0" y="150" width="150" height="150"/>
+                                <connections>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="secondVideo" id="S5B-FZ-d4H"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BdA-Km-VYb" firstAttribute="top" secondItem="aSs-DL-eVW" secondAttribute="bottom" id="5MZ-nl-yqc"/>
-                            <constraint firstItem="eD1-Ph-pLT" firstAttribute="top" secondItem="BdA-Km-VYb" secondAttribute="bottom" id="94T-u2-SAL"/>
-                            <constraint firstItem="DzS-y4-oid" firstAttribute="leading" secondItem="20S-c8-THe" secondAttribute="leading" id="Bcl-ia-LIj"/>
-                            <constraint firstItem="Ys0-UO-IKE" firstAttribute="height" secondItem="BdA-Km-VYb" secondAttribute="height" id="CZN-hr-Rwj"/>
-                            <constraint firstItem="DzS-y4-oid" firstAttribute="top" secondItem="cXj-hI-mXO" secondAttribute="bottom" id="FDd-l3-crk"/>
-                            <constraint firstItem="Ys0-UO-IKE" firstAttribute="width" secondItem="aSs-DL-eVW" secondAttribute="width" id="NWw-C4-x0m"/>
-                            <constraint firstItem="eD1-Ph-pLT" firstAttribute="top" secondItem="Ys0-UO-IKE" secondAttribute="bottom" id="Pgu-yr-NTz"/>
-                            <constraint firstItem="Ys0-UO-IKE" firstAttribute="top" secondItem="DzS-y4-oid" secondAttribute="bottom" id="SSm-bV-u4C"/>
-                            <constraint firstItem="BdA-Km-VYb" firstAttribute="leading" secondItem="Ys0-UO-IKE" secondAttribute="trailing" id="UA5-Qf-cXt"/>
-                            <constraint firstItem="Ys0-UO-IKE" firstAttribute="width" secondItem="BdA-Km-VYb" secondAttribute="width" id="VF4-7e-AeK"/>
-                            <constraint firstItem="aSs-DL-eVW" firstAttribute="top" secondItem="cXj-hI-mXO" secondAttribute="bottom" id="Vbt-H7-I31"/>
-                            <constraint firstItem="Ys0-UO-IKE" firstAttribute="height" secondItem="DzS-y4-oid" secondAttribute="height" id="cEC-Fy-ujG"/>
-                            <constraint firstAttribute="trailing" secondItem="aSs-DL-eVW" secondAttribute="trailing" id="ewv-f1-6ZX"/>
-                            <constraint firstItem="Ys0-UO-IKE" firstAttribute="leading" secondItem="20S-c8-THe" secondAttribute="leading" id="fME-4K-d74"/>
-                            <constraint firstAttribute="trailing" secondItem="BdA-Km-VYb" secondAttribute="trailing" id="iq9-k7-7Fn"/>
-                            <constraint firstItem="Ys0-UO-IKE" firstAttribute="width" secondItem="DzS-y4-oid" secondAttribute="width" id="mOo-Q7-iAq"/>
-                            <constraint firstItem="aSs-DL-eVW" firstAttribute="leading" secondItem="DzS-y4-oid" secondAttribute="trailing" id="v1N-uh-ZC8"/>
-                            <constraint firstItem="Ys0-UO-IKE" firstAttribute="height" secondItem="aSs-DL-eVW" secondAttribute="height" id="w5L-Vl-aqK"/>
+                            <constraint firstItem="6A5-FW-Tyq" firstAttribute="leading" secondItem="20S-c8-THe" secondAttribute="leading" id="2hZ-Bu-rvB"/>
+                            <constraint firstItem="g7h-Xa-CNm" firstAttribute="height" secondItem="6A5-FW-Tyq" secondAttribute="height" id="2tk-FJ-riB"/>
+                            <constraint firstItem="9Is-Td-sZu" firstAttribute="top" secondItem="g7h-Xa-CNm" secondAttribute="top" id="6Of-yI-j90"/>
+                            <constraint firstItem="9Is-Td-sZu" firstAttribute="leading" secondItem="6A5-FW-Tyq" secondAttribute="leading" id="HDG-Qt-DlD"/>
+                            <constraint firstItem="g7h-Xa-CNm" firstAttribute="width" secondItem="6A5-FW-Tyq" secondAttribute="width" id="Hif-o8-BZH"/>
+                            <constraint firstItem="eD1-Ph-pLT" firstAttribute="top" secondItem="9Is-Td-sZu" secondAttribute="bottom" id="If1-Yq-5h7"/>
+                            <constraint firstItem="g7h-Xa-CNm" firstAttribute="height" secondItem="NFS-gl-wXp" secondAttribute="height" id="Tfl-KP-2fG"/>
+                            <constraint firstItem="NFS-gl-wXp" firstAttribute="trailing" secondItem="20S-c8-THe" secondAttribute="trailing" id="aOS-Hc-oLW"/>
+                            <constraint firstItem="g7h-Xa-CNm" firstAttribute="leading" secondItem="9Is-Td-sZu" secondAttribute="trailing" id="eJR-ry-s3M"/>
+                            <constraint firstItem="NFS-gl-wXp" firstAttribute="top" secondItem="6A5-FW-Tyq" secondAttribute="top" id="hdy-So-UhR"/>
+                            <constraint firstItem="NFS-gl-wXp" firstAttribute="trailing" secondItem="20S-c8-THe" secondAttribute="trailing" id="jBu-s2-r8Q"/>
+                            <constraint firstItem="g7h-Xa-CNm" firstAttribute="width" secondItem="9Is-Td-sZu" secondAttribute="width" id="kgk-Sx-dmP"/>
+                            <constraint firstItem="g7h-Xa-CNm" firstAttribute="width" secondItem="NFS-gl-wXp" secondAttribute="width" id="oqK-ht-7uz"/>
+                            <constraint firstItem="g7h-Xa-CNm" firstAttribute="height" secondItem="9Is-Td-sZu" secondAttribute="height" id="pAL-0e-p5T"/>
+                            <constraint firstItem="9Is-Td-sZu" firstAttribute="top" secondItem="6A5-FW-Tyq" secondAttribute="bottom" id="shT-Sy-xcv"/>
+                            <constraint firstItem="NFS-gl-wXp" firstAttribute="leading" secondItem="g7h-Xa-CNm" secondAttribute="leading" id="vSm-o4-6NC"/>
+                            <constraint firstItem="NFS-gl-wXp" firstAttribute="top" secondItem="cXj-hI-mXO" secondAttribute="bottom" id="vsL-UF-7hX"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="300" height="300"/>
-                    <connections>
-                        <outlet property="bottomLeftVideo" destination="Ys0-UO-IKE" id="iQa-g0-V1S"/>
-                        <outlet property="bottomRightVideo" destination="BdA-Km-VYb" id="Po0-6n-Amx"/>
-                        <outlet property="topLeftVideo" destination="DzS-y4-oid" id="XeL-me-xYG"/>
-                        <outlet property="topRightVideo" destination="aSs-DL-eVW" id="U9k-ps-QkK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngD-SE-RHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856" y="-262"/>
+            <point key="canvasLocation" x="-46" y="-502"/>
         </scene>
         <!--Story View 1x4-->
         <scene sceneID="SqG-UM-DMF">
@@ -208,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D78-ED-Tim" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="454" y="185"/>
+            <point key="canvasLocation" x="350" y="-502"/>
         </scene>
         <!--Story View 4x1-->
         <scene sceneID="CsL-IK-8nS">
@@ -275,10 +292,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jd-bm-l3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19" y="185"/>
+            <point key="canvasLocation" x="468" y="-61"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AI8-53-aOv"/>
+        <segue reference="6OD-kX-ShG"/>
     </inferredMetricsTieBreakers>
 </document>

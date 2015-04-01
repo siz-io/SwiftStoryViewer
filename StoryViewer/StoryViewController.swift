@@ -10,18 +10,15 @@ import UIKit
 
 class StoryViewController: UIViewController {
 
-    @IBOutlet weak var topLeftVideo: AVPlayerView!
-    @IBOutlet weak var topRightVideo: AVPlayerView!
-    @IBOutlet weak var bottomLeftVideo: AVPlayerView!
-    @IBOutlet weak var bottomRightVideo: AVPlayerView!
+    var videoViewControllers = [Int:VideoViewController]()
     
     var model: Story? {
         didSet {
             if let story = model {
-                topLeftVideo.loadVideo(story.boxes[0])
-                topRightVideo.loadVideo(story.boxes[1])
-                bottomLeftVideo.loadVideo(story.boxes[2])
-                bottomRightVideo.loadVideo(story.boxes[3])
+                for (i,controller) in videoViewControllers {
+                    let currentBox = i%story.boxes.count
+                    controller.loadVideo(story.boxes[currentBox])
+                }
             }
         }
     }
@@ -33,9 +30,22 @@ class StoryViewController: UIViewController {
     
     func play()
     {
-        topLeftVideo.play()
-        topRightVideo.play()
-        bottomLeftVideo.play()
-        bottomRightVideo.play()
+        for (_,controller) in videoViewControllers {
+            controller.play()
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if let videoViewController = segue.destinationViewController as? VideoViewController {
+                switch identifier {
+                case "firstVideo" : videoViewControllers[0] = videoViewController
+                case "secondVideo" : videoViewControllers[1] = videoViewController
+                case "thirdVideo" : videoViewControllers[2] = videoViewController
+                case "fourthVideo": videoViewControllers[3] = videoViewController
+                default: break
+                }
+            }
+        }
     }
 }

@@ -66,12 +66,12 @@ class ViewController: UIViewController {
                     completion: { (result:Bool) in
                         self.loadNewStory()
                         self.storyViewController.play()
-                        self.returnToIdentity()
+                        self.returnToIdentity(0)
                     }
                 )
                 
             } else {
-                returnToIdentity()
+                returnToIdentity(Constants.timeToReturnToIdentity)
             }
             
             println("TranslationX=\(translationX) MinTranslationX=\(minTranslationX)")
@@ -85,9 +85,9 @@ class ViewController: UIViewController {
         }
     }
     
-    func returnToIdentity(){
+    func returnToIdentity(time: Double){
         UIView.animateWithDuration(
-            Constants.timeToReturnToIdentity,
+            time,
             delay: 0,
             options: UIViewAnimationOptions.CurveEaseOut,
             animations: {

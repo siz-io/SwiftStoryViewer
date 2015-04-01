@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F953D0321AC9844100682177 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = F953D0311AC9844100682177 /* Story.swift */; };
-		F953D0361AC9A56D00682177 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F953D0351AC9A56D00682177 /* ContainerViewController.swift */; };
-		F95D45551AC41A7F00ACE028 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D45541AC41A7F00ACE028 /* StoryViewController.swift */; };
+		F953D0361AC9A56D00682177 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F953D0351AC9A56D00682177 /* StoryViewController.swift */; };
+		F99CD3D81ACC5919001AFC0A /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99CD3D71ACC5919001AFC0A /* VideoViewController.swift */; };
 		F99E69081AB89AEC000E194D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E69071AB89AEC000E194D /* AppDelegate.swift */; };
 		F99E690A1AB89AEC000E194D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E69091AB89AEC000E194D /* ViewController.swift */; };
 		F99E690D1AB89AEC000E194D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99E690B1AB89AEC000E194D /* Main.storyboard */; };
@@ -32,8 +32,8 @@
 
 /* Begin PBXFileReference section */
 		F953D0311AC9844100682177 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
-		F953D0351AC9A56D00682177 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		F95D45541AC41A7F00ACE028 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		F953D0351AC9A56D00682177 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		F99CD3D71ACC5919001AFC0A /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		F99E69021AB89AEC000E194D /* StoryViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99E69061AB89AEC000E194D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F99E69071AB89AEC000E194D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,13 +92,13 @@
 				F99E69071AB89AEC000E194D /* AppDelegate.swift */,
 				F99E69091AB89AEC000E194D /* ViewController.swift */,
 				F99E690B1AB89AEC000E194D /* Main.storyboard */,
-				F95D45541AC41A7F00ACE028 /* StoryViewController.swift */,
 				F99E690E1AB89AEC000E194D /* Images.xcassets */,
 				F99E69101AB89AEC000E194D /* LaunchScreen.xib */,
 				F99E69051AB89AEC000E194D /* Supporting Files */,
 				F99E69291AB99A88000E194D /* AVPlayerView.swift */,
 				F953D0311AC9844100682177 /* Story.swift */,
-				F953D0351AC9A56D00682177 /* ContainerViewController.swift */,
+				F953D0351AC9A56D00682177 /* StoryViewController.swift */,
+				F99CD3D71ACC5919001AFC0A /* VideoViewController.swift */,
 			);
 			path = StoryViewer;
 			sourceTree = "<group>";
@@ -229,11 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F95D45551AC41A7F00ACE028 /* StoryViewController.swift in Sources */,
 				F99E692A1AB99A88000E194D /* AVPlayerView.swift in Sources */,
 				F99E690A1AB89AEC000E194D /* ViewController.swift in Sources */,
+				F99CD3D81ACC5919001AFC0A /* VideoViewController.swift in Sources */,
 				F99E69081AB89AEC000E194D /* AppDelegate.swift in Sources */,
-				F953D0361AC9A56D00682177 /* ContainerViewController.swift in Sources */,
+				F953D0361AC9A56D00682177 /* StoryViewController.swift in Sources */,
 				F953D0321AC9844100682177 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
