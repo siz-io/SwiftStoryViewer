@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     private struct Constants {
         static let translationScale: CGFloat = 1.5
         static let timeToReturnToIdentity = 0.3
-        static let timeToExitStory = 0.3
+        static let timeToExitStory = 0.4
         static let minPercentOfPan: Float = 0.30
     }
     
@@ -53,15 +53,16 @@ class ViewController: UIViewController {
         case .Ended:
             let screenWidth = self.view.bounds.width
             let minTranslationX = Float(screenWidth)*Constants.minPercentOfPan
-            let translationX = Float(abs(gesture.translationInView(storyViewContainer).x*Constants.translationScale))
-            if(translationX > minTranslationX)
+            let translationX = Float(gesture.translationInView(storyViewContainer).x*Constants.translationScale)
+            let rightTranslation = translationX > 0
+            if(abs(translationX) > minTranslationX)
             {
                 UIView.animateWithDuration(
                     Constants.timeToExitStory,
                     delay: 0,
                     options: UIViewAnimationOptions.CurveEaseOut,
                     animations: {
-                        self.storyViewContainer.transform = CGAffineTransformMakeTranslation(screenWidth, 0)
+                        self.storyViewContainer.transform = CGAffineTransformMakeTranslation(rightTranslation ? screenWidth : -screenWidth, 0)
                     },
                     completion: { (result:Bool) in
                         self.loadNewStory()
