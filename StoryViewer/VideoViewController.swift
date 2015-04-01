@@ -16,6 +16,11 @@ class VideoViewController: UIViewController {
 
     private var videoPlayer: AVPlayer?
     private var videoPlayerItem: AVPlayerItem?
+    var sourceURL: String? {
+        didSet {
+            loadVideo()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,33 +31,38 @@ class VideoViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    func loadVideo(sourceURL: String)
+    private func loadVideo()
     {
-        spinner.startAnimating()
-        let url = NSURL(string: sourceURL)
-        videoPlayerItem = AVPlayerItem(URL: url)
-        if let playerItem = videoPlayerItem {
-            videoPlayer = AVPlayer(playerItem: playerItem)
-            if let player = videoPlayer {
-                player.actionAtItemEnd = .None
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: "play", name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayer?.currentItem)
-                playerItem.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
-                playerView.videoPlayer = player
+        if let stringURL = sourceURL {
+            spinner.startAnimating()
+            let url = NSURL(string: stringURL)
+            videoPlayerItem = AVPlayerItem(URL: url)
+            if let playerItem = videoPlayerItem {
+                videoPlayer = AVPlayer(playerItem: playerItem)
+                if let player = videoPlayer {
+                    player.actionAtItemEnd = .None
+                    NSNotificationCenter.defaultCenter().addObserver(self, selector: "play", name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayer?.currentItem)
+                    playerItem.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
+                    playerView.videoPlayer = player
+                }
             }
         }
     }
     
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
-        if videoPlayerItem?.status == AVPlayerItemStatus.ReadyToPlay {
-            videoLoaded()
+        if let playerItem = videoPlayerItem {
+            switch playerItem.status {
+            case AVPlayerItemStatus.ReadyToPlay:
+                spinner.stopAnimating()
+                play()
+            case AVPlayerItemStatus.Failed:
+                spinner.stopAnimating()
+                println("Failed to load video \(sourceURL)")
+            default: break
+            }
         }
     }
-    
-    func videoLoaded()
-    {
-        spinner.stopAnimating()
-        play()
-    }
+
 
     func play()
     {

@@ -17,7 +17,7 @@ class StoryViewController: UIViewController {
             if let story = model {
                 for (i,controller) in videoViewControllers {
                     let currentBox = i%story.boxes.count
-                    controller.loadVideo(story.boxes[currentBox])
+                    controller.sourceURL = story.boxes[currentBox]
                 }
             }
         }
