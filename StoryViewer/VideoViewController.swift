@@ -15,7 +15,15 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var playerView: AVPlayerView!
 
     private var videoPlayer: AVPlayer?
-    private var videoPlayerItem: AVPlayerItem?
+    private var videoPlayerItem: AVPlayerItem? {
+        willSet {
+            if let playerItem = videoPlayerItem {
+                NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: playerItem)
+                playerItem.removeObserver(self, forKeyPath: "status")
+            }
+        }
+    }
+    
     var sourceURL: String? {
         didSet {
             loadVideo()

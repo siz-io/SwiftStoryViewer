@@ -8,9 +8,15 @@
 
 import Foundation
 
-class Story
+class Story: Printable
 {
     let id: String
+    
+    var description: String {
+        get {
+            return "id=\(id)"
+        }
+    }
     
     var boxes: [String] {
         get {
@@ -25,12 +31,41 @@ class Story
         self.id = id
     }
     
-    private struct Database {
-        static let storyIds = ["1426589791593b2493fba815","1427469323995ed5cd418e9f","14274674523774c0ce58fca8","142746486623048953be9ce8","1427463698833a8039eef668","14274635585026374000e5fa","14274587736024eea248c438","1427457701047780790e00b1","1427456107646465bc0c8c5d","14274553480930af2fe62e48","142745454635644e9cb4236b", "1427897749419f1effbf9b47","14278968680936328d5534dc","1427896684961dc8519ec16a"]
+    init?(fromNSDictionary dict: NSDictionary)
+    {
+        if let id = dict["id"] as? String {
+            self.id = id
+        } else {
+            self.id = ""
+            return nil
+        }
+    }
+        
+    struct Database {
+        static var currentStories = [Story]()
     }
     
-    class func getRandomStory() -> Story {
-        let randomIndex = Int(arc4random_uniform(UInt32(Database.storyIds.count)))
-        return Story(id: Database.storyIds[randomIndex])
+    class func getNextStory(onSuccess: (Story) -> Void) {
+        if !Database.currentStories.isEmpty {
+            onSuccess(Story(id: Database.currentStories.removeAtIndex(0).id))
+        } else {
+            getStories() {
+                (stories) in
+                    self.getNextStory(onSuccess)
+            }
+        }
+    }
+    
+    class func getStories(onSuccess: ([Story]) -> Void) {
+        if !Database.currentStories.isEmpty {
+            onSuccess(Database.currentStories)
+        } else {
+            NetworkController.getStories {
+                (stories) -> Void in
+                Database.currentStories = stories
+                onSuccess(stories)
+            }
+        }
+        
     }
 }

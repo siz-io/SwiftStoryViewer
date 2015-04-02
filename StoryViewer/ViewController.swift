@@ -32,13 +32,15 @@ class ViewController: UIViewController {
     
     
     func loadNewStory() {
-        storyViewController.loadStory(Story.getRandomStory())
+        Story.getNextStory() {
+            self.storyViewController.story = $0
+        }
     }
     
     private struct Constants {
         static let translationScale: CGFloat = 1.5
         static let timeToReturnToIdentity = 0.3
-        static let timeToExitStory = 0.4
+        static let timeToExitStory = 0.25
         static let minPercentOfPan: Float = 0.30
     }
     
