@@ -52,6 +52,7 @@ class VideoViewController: UIViewController {
                     NSNotificationCenter.defaultCenter().addObserver(self, selector: "play", name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayer?.currentItem)
                     playerItem.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
                     playerView.videoPlayer = player
+                    play()
                 }
             }
         }
@@ -62,7 +63,6 @@ class VideoViewController: UIViewController {
             switch playerItem.status {
             case AVPlayerItemStatus.ReadyToPlay:
                 spinner.stopAnimating()
-                play()
             case AVPlayerItemStatus.Failed:
                 spinner.stopAnimating()
                 println("Failed to load video \(sourceURL)")
