@@ -21,7 +21,12 @@ class StoryViewController: UIViewController {
             if let model = story {
                 for (i,controller) in videoViewControllers {
                     let currentBox = i%model.boxes.count
-                    controller.sourceURL = model.boxes[currentBox]
+                    for format in model.boxes[currentBox].formats {
+                        if format.type == "mp4" {
+                            controller.sourceURL = format.href
+                            break
+                        }
+                    }
                 }
             }
         }
@@ -34,25 +39,6 @@ class StoryViewController: UIViewController {
         }
     }
     
-    func changeTo1x4()
-    {
-        if var newController = storyboard?.instantiateViewControllerWithIdentifier("Story View 4x1") as? StoryViewController {
-            newController.view.frame = parentViewController!.view.bounds
-            newController.story = self.story?
-            parentViewController?.addChildViewController(newController)
-            willMoveToParentViewController(nil)
-            parentViewController?.transitionFromViewController(self,
-                toViewController: newController,
-                duration: 0,
-                options: UIViewAnimationOptions.TransitionNone,
-                animations: {},
-                completion: { (finished: Bool) -> Void in
-                    self.removeFromParentViewController()
-                    newController.didMoveToParentViewController(self)
-                }
-            )
-        }
-    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
