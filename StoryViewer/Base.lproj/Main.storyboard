@@ -20,7 +20,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2j-el-Blr">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
-                                    <segue destination="ZJS-B5-Eji" kind="embed" id="AI8-53-aOv"/>
+                                    <segue destination="ZJS-B5-Eji" kind="embed" id="Cp7-7n-a3C"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -50,12 +50,11 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1139" y="-476"/>
+            <point key="canvasLocation" x="-1657" y="-181"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="OMQ-SQ-wi0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gB5-Ko-tXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="sZt-jh-YOQ" customClass="VideoViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1tg-GG-fA9"/>
@@ -90,13 +89,13 @@
                         <outlet property="spinner" destination="8eD-2M-lyu" id="UaI-yR-tvq"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gB5-Ko-tXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="-111"/>
+            <point key="canvasLocation" x="-50" y="92"/>
         </scene>
         <!--Story View 2x2-->
         <scene sceneID="MYr-6P-zcw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ngD-SE-RHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Story View 2x2" title="Story View 2x2" automaticallyAdjustsScrollViewInsets="NO" id="ZJS-B5-Eji" customClass="StoryViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cXj-hI-mXO"/>
@@ -106,16 +105,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6A5-FW-Tyq">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                <connections>
-                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="firstVideo" id="CvX-Q2-a3u"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFS-gl-wXp">
                                 <rect key="frame" x="150" y="0.0" width="150" height="150"/>
                                 <connections>
-                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="thirdVideo" id="aN6-hN-0A9"/>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="secondVideo" id="aN6-hN-0A9"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7h-Xa-CNm">
@@ -127,7 +120,13 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Is-Td-sZu">
                                 <rect key="frame" x="0.0" y="150" width="150" height="150"/>
                                 <connections>
-                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="secondVideo" id="S5B-FZ-d4H"/>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="thirdVideo" id="S5B-FZ-d4H"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6A5-FW-Tyq">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                <connections>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="firstVideo" id="CvX-Q2-a3u"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -157,13 +156,13 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="300" height="300"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ngD-SE-RHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="-518"/>
+            <point key="canvasLocation" x="-50" y="-315"/>
         </scene>
         <!--Story View 1x4-->
         <scene sceneID="qHk-Nu-nM1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lJQ-CQ-2v3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Story View 4x1" title="Story View 1x4" automaticallyAdjustsScrollViewInsets="NO" id="cnM-mF-dwy" customClass="StoryViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yNG-2u-RxU"/>
@@ -176,19 +175,19 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwQ-4o-Rfq">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="75"/>
                                 <connections>
-                                    <segue destination="sZt-jh-YOQ" kind="embed" id="uJD-Jo-HuD"/>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="firstVideo" id="uJD-Jo-HuD"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ir-9b-cKV">
                                 <rect key="frame" x="0.0" y="75" width="300" height="75"/>
                                 <connections>
-                                    <segue destination="sZt-jh-YOQ" kind="embed" id="bvk-Tz-4fU"/>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="secondVideo" id="bvk-Tz-4fU"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgG-LW-t5B">
                                 <rect key="frame" x="0.0" y="150" width="300" height="75"/>
                                 <connections>
-                                    <segue destination="sZt-jh-YOQ" kind="embed" id="Yhi-Gg-JhR"/>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="thirdVideo" id="Yhi-Gg-JhR"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jp5-y1-ROl">
@@ -226,11 +225,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="300" height="300"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lJQ-CQ-2v3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-519" y="-111"/>
+            <point key="canvasLocation" x="-523" y="92"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aN6-hN-0A9"/>
+        <segue reference="uJD-Jo-HuD"/>
     </inferredMetricsTieBreakers>
 </document>

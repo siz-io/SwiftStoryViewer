@@ -74,16 +74,16 @@ struct NetworkController {
         
     }
     
-    
     private static var currentToken: Token?
     static func getToken(onSuccess: (Token) -> Void)
     {
         if let token = currentToken {
             onSuccess(token)
         } else {
-            sendRequest("tokens", method: "POST", data: [String:String](), onSuccess: {
+            sendRequest("tokens", method: "POST", data: [String:AnyObject](), onSuccess: {
                 (response,result) -> Void in
                 if let token = result["tokens"]?["id"] as? String {
+                    self.currentToken = token
                     onSuccess(token)
                 } else {
                     println("error to find id in result")
@@ -107,6 +107,24 @@ struct NetworkController {
                     }
                     onSuccess(stories)
                 }
+            })
+        }
+    }
+    
+    static func likeStory(story: Story){
+        sendEvent("like", story: story)
+    }
+    
+    static func nopeStory(story: Story){
+        sendEvent("nope", story: story)
+    }
+    
+    static func sendEvent(type: String, story: Story){
+        getToken() {
+            (token) in
+            self.sendRequest("events", accessToken: token, method: "POST", data: ["events": ["type":"\(type)","storyId":"\(story.id)"]], onSuccess: {
+                (response,result) -> Void in
+                    println("Event \(type) for story \(story.id) sended")
             })
         }
     }

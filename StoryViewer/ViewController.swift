@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     private struct Constants {
         static let translationScale: CGFloat = 1.5
         static let timeToReturnToIdentity = 0.3
-        static let timeToExitStory = 0.25
+        static let timeToExitStory = 0.20
         static let minPercentOfPan: Float = 0.30
     }
     
@@ -67,6 +67,13 @@ class ViewController: UIViewController {
                         self.storyViewContainer.transform = CGAffineTransformMakeTranslation(rightTranslation ? screenWidth : -screenWidth, 0)
                     },
                     completion: { (result:Bool) in
+                        if let currentStory = self.storyViewController.story {
+                            if rightTranslation {
+                                NetworkController.likeStory(currentStory)
+                            } else {
+                                NetworkController.likeStory(currentStory)
+                            }
+                        }
                         self.loadNewStory()
                         self.storyViewController.play()
                         self.returnToIdentity(0)
