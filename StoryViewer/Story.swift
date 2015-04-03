@@ -58,7 +58,7 @@ class Story: Printable
     
     let id: String
     let boxes: [Box]
-    let slug: String
+    let title: String
     
     var description: String {
         get {
@@ -70,8 +70,8 @@ class Story: Printable
     {
         if let id = dict["id"] as? String {
             self.id = id
-            if let slug = dict["slug"] as? String {
-                self.slug = slug
+            if let title = dict["title"] as? String {
+                self.title = title
                 if let boxesDict = dict["boxes"] as? [NSDictionary] {
                     var boxes = [Box]()
                     for boxDict in boxesDict {
@@ -85,7 +85,7 @@ class Story: Printable
             }
         }
         self.id = ""
-        self.slug = ""
+        self.title = ""
         self.boxes = [Box]()
         return nil
     }

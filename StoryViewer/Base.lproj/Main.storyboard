@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -129,15 +130,25 @@
                                     <segue destination="sZt-jh-YOQ" kind="embed" identifier="firstVideo" id="CvX-Q2-a3u"/>
                                 </connections>
                             </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DQj-vb-MbO">
+                                <rect key="frame" x="16" y="8" width="268" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="DQj-vb-MbO" firstAttribute="top" secondItem="cXj-hI-mXO" secondAttribute="bottom" constant="8" symbolic="YES" id="1ow-BL-ZYB"/>
                             <constraint firstItem="6A5-FW-Tyq" firstAttribute="leading" secondItem="20S-c8-THe" secondAttribute="leading" id="2hZ-Bu-rvB"/>
                             <constraint firstItem="g7h-Xa-CNm" firstAttribute="height" secondItem="6A5-FW-Tyq" secondAttribute="height" id="2tk-FJ-riB"/>
                             <constraint firstItem="9Is-Td-sZu" firstAttribute="top" secondItem="g7h-Xa-CNm" secondAttribute="top" id="6Of-yI-j90"/>
                             <constraint firstItem="9Is-Td-sZu" firstAttribute="leading" secondItem="6A5-FW-Tyq" secondAttribute="leading" id="HDG-Qt-DlD"/>
                             <constraint firstItem="g7h-Xa-CNm" firstAttribute="width" secondItem="6A5-FW-Tyq" secondAttribute="width" id="Hif-o8-BZH"/>
                             <constraint firstItem="eD1-Ph-pLT" firstAttribute="top" secondItem="9Is-Td-sZu" secondAttribute="bottom" id="If1-Yq-5h7"/>
+                            <constraint firstItem="DQj-vb-MbO" firstAttribute="leading" secondItem="20S-c8-THe" secondAttribute="leadingMargin" id="MKw-vC-zwy"/>
+                            <constraint firstItem="DQj-vb-MbO" firstAttribute="trailing" secondItem="20S-c8-THe" secondAttribute="trailingMargin" id="Nm7-oW-aIP"/>
                             <constraint firstItem="g7h-Xa-CNm" firstAttribute="height" secondItem="NFS-gl-wXp" secondAttribute="height" id="Tfl-KP-2fG"/>
                             <constraint firstItem="NFS-gl-wXp" firstAttribute="trailing" secondItem="20S-c8-THe" secondAttribute="trailing" id="aOS-Hc-oLW"/>
                             <constraint firstItem="g7h-Xa-CNm" firstAttribute="leading" secondItem="9Is-Td-sZu" secondAttribute="trailing" id="eJR-ry-s3M"/>
@@ -155,6 +166,9 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="300" height="300"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="DQj-vb-MbO" id="tNp-EJ-Syd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngD-SE-RHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -231,6 +245,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uJD-Jo-HuD"/>
+        <segue reference="aN6-hN-0A9"/>
     </inferredMetricsTieBreakers>
 </document>

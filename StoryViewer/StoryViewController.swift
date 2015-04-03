@@ -10,6 +10,7 @@ import UIKit
 
 class StoryViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     var videoViewControllers = [Int:VideoViewController]()
     
     override func viewDidLoad() {
@@ -19,6 +20,7 @@ class StoryViewController: UIViewController {
     var story: Story? {
         didSet {
             if let model = story {
+                titleLabel.text = model.title
                 for (i,controller) in videoViewControllers {
                     let currentBox = i%model.boxes.count
                     for format in model.boxes[currentBox].formats {
@@ -28,6 +30,8 @@ class StoryViewController: UIViewController {
                         }
                     }
                 }
+            } else {
+                titleLabel.text = .None
             }
         }
     }
@@ -38,7 +42,6 @@ class StoryViewController: UIViewController {
             controller.play()
         }
     }
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
