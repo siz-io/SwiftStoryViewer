@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +21,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2j-el-Blr">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
-                                    <segue destination="ZJS-B5-Eji" kind="embed" id="Cp7-7n-a3C"/>
+                                    <segue destination="Fuq-lx-WLr" kind="embed" id="TRO-ER-Pxz"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -97,7 +97,7 @@
         <!--Story View 2x2-->
         <scene sceneID="MYr-6P-zcw">
             <objects>
-                <viewController storyboardIdentifier="Story View 2x2" title="Story View 2x2" automaticallyAdjustsScrollViewInsets="NO" id="ZJS-B5-Eji" customClass="StoryViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Story View 2x2" title="Story View 2x2" automaticallyAdjustsScrollViewInsets="NO" id="ZJS-B5-Eji" customClass="StoryGridViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cXj-hI-mXO"/>
                         <viewControllerLayoutGuide type="bottom" id="eD1-Ph-pLT"/>
@@ -130,25 +130,15 @@
                                     <segue destination="sZt-jh-YOQ" kind="embed" identifier="firstVideo" id="CvX-Q2-a3u"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DQj-vb-MbO">
-                                <rect key="frame" x="16" y="8" width="268" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DQj-vb-MbO" firstAttribute="top" secondItem="cXj-hI-mXO" secondAttribute="bottom" constant="8" symbolic="YES" id="1ow-BL-ZYB"/>
                             <constraint firstItem="6A5-FW-Tyq" firstAttribute="leading" secondItem="20S-c8-THe" secondAttribute="leading" id="2hZ-Bu-rvB"/>
                             <constraint firstItem="g7h-Xa-CNm" firstAttribute="height" secondItem="6A5-FW-Tyq" secondAttribute="height" id="2tk-FJ-riB"/>
                             <constraint firstItem="9Is-Td-sZu" firstAttribute="top" secondItem="g7h-Xa-CNm" secondAttribute="top" id="6Of-yI-j90"/>
                             <constraint firstItem="9Is-Td-sZu" firstAttribute="leading" secondItem="6A5-FW-Tyq" secondAttribute="leading" id="HDG-Qt-DlD"/>
                             <constraint firstItem="g7h-Xa-CNm" firstAttribute="width" secondItem="6A5-FW-Tyq" secondAttribute="width" id="Hif-o8-BZH"/>
                             <constraint firstItem="eD1-Ph-pLT" firstAttribute="top" secondItem="9Is-Td-sZu" secondAttribute="bottom" id="If1-Yq-5h7"/>
-                            <constraint firstItem="DQj-vb-MbO" firstAttribute="leading" secondItem="20S-c8-THe" secondAttribute="leadingMargin" id="MKw-vC-zwy"/>
-                            <constraint firstItem="DQj-vb-MbO" firstAttribute="trailing" secondItem="20S-c8-THe" secondAttribute="trailingMargin" id="Nm7-oW-aIP"/>
                             <constraint firstItem="g7h-Xa-CNm" firstAttribute="height" secondItem="NFS-gl-wXp" secondAttribute="height" id="Tfl-KP-2fG"/>
                             <constraint firstItem="NFS-gl-wXp" firstAttribute="trailing" secondItem="20S-c8-THe" secondAttribute="trailing" id="aOS-Hc-oLW"/>
                             <constraint firstItem="g7h-Xa-CNm" firstAttribute="leading" secondItem="9Is-Td-sZu" secondAttribute="trailing" id="eJR-ry-s3M"/>
@@ -174,10 +164,57 @@
             </objects>
             <point key="canvasLocation" x="-50" y="-315"/>
         </scene>
+        <!--Story View Controller-->
+        <scene sceneID="Ycw-4Q-gLA">
+            <objects>
+                <viewController id="Fuq-lx-WLr" customClass="StoryViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HJp-KG-vuE"/>
+                        <viewControllerLayoutGuide type="bottom" id="5S9-TK-lK1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AcI-hK-2Js">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-jK-ges">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                <connections>
+                                    <segue destination="ZJS-B5-Eji" kind="embed" id="lg2-kx-VW2"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DQj-vb-MbO">
+                                <rect key="frame" x="16" y="20" width="268" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cAh-jK-ges" firstAttribute="top" secondItem="HJp-KG-vuE" secondAttribute="bottom" id="5I7-hD-JtN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DQj-vb-MbO" secondAttribute="trailing" id="6yx-PI-kpl"/>
+                            <constraint firstItem="DQj-vb-MbO" firstAttribute="leading" secondItem="AcI-hK-2Js" secondAttribute="leadingMargin" id="Hqj-j9-gtW"/>
+                            <constraint firstItem="cAh-jK-ges" firstAttribute="leading" secondItem="AcI-hK-2Js" secondAttribute="leading" id="JHm-4g-UgG"/>
+                            <constraint firstAttribute="trailing" secondItem="cAh-jK-ges" secondAttribute="trailing" id="OTC-CT-4AF"/>
+                            <constraint firstItem="DQj-vb-MbO" firstAttribute="top" secondItem="AcI-hK-2Js" secondAttribute="top" constant="20" symbolic="YES" id="Red-Fv-gcz"/>
+                            <constraint firstItem="cAh-jK-ges" firstAttribute="bottom" secondItem="5S9-TK-lK1" secondAttribute="top" id="yOr-xI-8Vd"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="DQj-vb-MbO" id="njJ-Gu-7Ep"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hp3-lL-JjB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-665" y="-326"/>
+        </scene>
         <!--Story View 1x4-->
         <scene sceneID="qHk-Nu-nM1">
             <objects>
-                <viewController storyboardIdentifier="Story View 4x1" title="Story View 1x4" automaticallyAdjustsScrollViewInsets="NO" id="cnM-mF-dwy" customClass="StoryViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Story View 4x1" title="Story View 1x4" automaticallyAdjustsScrollViewInsets="NO" id="cnM-mF-dwy" customClass="StoryGridViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yNG-2u-RxU"/>
                         <viewControllerLayoutGuide type="bottom" id="VA1-zc-C8i"/>
