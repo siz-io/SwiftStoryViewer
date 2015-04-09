@@ -17,12 +17,12 @@ class AVPlayerView : UIView {
     
     var videoPlayer: AVPlayer? {
         set {
-            let layer: AVPlayerLayer = self.layer as AVPlayerLayer
+            let layer: AVPlayerLayer = self.layer as! AVPlayerLayer
             layer.player = newValue
             layer.videoGravity = AVLayerVideoGravityResizeAspect
         }
         get {
-            let layer: AVPlayerLayer = self.layer as AVPlayerLayer
+            let layer: AVPlayerLayer = self.layer as! AVPlayerLayer
             return layer.player
         }
     }
