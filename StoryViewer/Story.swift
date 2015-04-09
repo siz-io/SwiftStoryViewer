@@ -68,26 +68,26 @@ class Story: Printable
     
     init?(fromNSDictionary dict: NSDictionary)
     {
-        if let id = dict["id"] as? String {
+        if let id = dict["id"] as? String,
+            title = dict["title"] as? String,
+            boxesDict = dict["boxes"] as? [NSDictionary]
+        {
             self.id = id
-            if let title = dict["title"] as? String {
-                self.title = title
-                if let boxesDict = dict["boxes"] as? [NSDictionary] {
-                    var boxes = [Box]()
-                    for boxDict in boxesDict {
-                        if let box = Box(fromNSDictionary: boxDict) {
-                            boxes.append(box)
-                        }
-                    }
-                    self.boxes = boxes
-                    return
+            self.title = title
+            
+            var boxes = [Box]()
+            for boxDict in boxesDict {
+                if let box = Box(fromNSDictionary: boxDict) {
+                    boxes.append(box)
                 }
             }
+            self.boxes = boxes
+        } else {
+            self.id = ""
+            self.title = ""
+            self.boxes = [Box]()
+            return nil
         }
-        self.id = ""
-        self.title = ""
-        self.boxes = [Box]()
-        return nil
     }
     
     struct Database {
