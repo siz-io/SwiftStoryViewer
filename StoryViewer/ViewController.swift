@@ -21,13 +21,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNewStory()
-        NSNotificationCenter.defaultCenter().addObserver(storyViewController, selector: "play", name: UIApplicationDidBecomeActiveNotification, object: .None)
     }
-    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        storyViewController.play()
     }
     
     
@@ -75,7 +72,7 @@ class ViewController: UIViewController {
                             }
                         }
                         self.loadNewStory()
-                        self.storyViewController.play()
+                        self.storyViewController?.play()
                         self.returnToIdentity(0)
                     }
                 )

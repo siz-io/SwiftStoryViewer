@@ -54,17 +54,17 @@ class Story: Printable
             }
             return nil
         }
+        
+        
+        func ratio() -> Double {
+            return Double(width)/Double(height)
+        }
+        
     }
     
     let id: String
     let boxes: [Box]
     let title: String
-    
-    var description: String {
-        get {
-            return "id=\(id)"
-        }
-    }
     
     init?(fromNSDictionary dict: NSDictionary)
     {
@@ -89,6 +89,13 @@ class Story: Printable
             return nil
         }
     }
+    
+    var description: String {
+        get {
+            return "id=\(id)"
+        }
+    }
+
     
     struct Database {
         static var currentStories = [Story]()

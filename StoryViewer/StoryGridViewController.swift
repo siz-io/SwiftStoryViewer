@@ -10,25 +10,16 @@ import UIKit
 
 class StoryGridViewController: UIViewController {
 
-    var videoViewControllers = [Int:VideoViewController]()
+    private var videoViewControllers = [Int:VideoViewController]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
     }
     
     var story: Story? {
         didSet {
-            if let model = story {
-                for (i,controller) in videoViewControllers {
-                    let currentBox = i%model.boxes.count
-                    for format in model.boxes[currentBox].formats {
-                        if format.type == "mp4" {
-                            controller.sourceURL = format.href
-                            break
-                        }
-                    }
-                }
-            }
+            updateUI()
         }
     }
     
@@ -36,6 +27,21 @@ class StoryGridViewController: UIViewController {
     {
         for (_,controller) in videoViewControllers {
             controller.play()
+        }
+    }
+    
+    private func updateUI()
+    {
+        if let model = story {
+            for (i,controller) in videoViewControllers {
+                let currentBox = i%model.boxes.count
+                for format in model.boxes[currentBox].formats {
+                    if format.type == "mp4" {
+                        controller.sourceURL = format.href
+                        break
+                    }
+                }
+            }
         }
     }
     

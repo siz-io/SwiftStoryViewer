@@ -92,12 +92,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gB5-Ko-tXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-50" y="92"/>
+            <point key="canvasLocation" x="4" y="-322"/>
         </scene>
         <!--Story View 2x2-->
         <scene sceneID="MYr-6P-zcw">
             <objects>
-                <viewController storyboardIdentifier="Story View 2x2" title="Story View 2x2" automaticallyAdjustsScrollViewInsets="NO" id="ZJS-B5-Eji" customClass="StoryGridViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Story View 2x2" title="Story View 2x2" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZJS-B5-Eji" customClass="StoryGridViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cXj-hI-mXO"/>
                         <viewControllerLayoutGuide type="bottom" id="eD1-Ph-pLT"/>
@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngD-SE-RHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-50" y="-315"/>
+            <point key="canvasLocation" x="4" y="-768"/>
         </scene>
         <!--Story View Controller-->
         <scene sceneID="Ycw-4Q-gLA">
@@ -179,7 +179,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-jK-ges">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                 <connections>
-                                    <segue destination="ZJS-B5-Eji" kind="embed" id="lg2-kx-VW2"/>
+                                    <segue destination="q8s-N7-bc4" kind="embed" id="qbi-Ou-lr9"/>
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DQj-vb-MbO">
@@ -209,12 +209,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hp3-lL-JjB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-665" y="-326"/>
+            <point key="canvasLocation" x="-887" y="-437"/>
         </scene>
-        <!--Story View 1x4-->
+        <!--Story View 4x1-->
         <scene sceneID="qHk-Nu-nM1">
             <objects>
-                <viewController storyboardIdentifier="Story View 4x1" title="Story View 1x4" automaticallyAdjustsScrollViewInsets="NO" id="cnM-mF-dwy" customClass="StoryGridViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Story View 4x1" title="Story View 4x1" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cnM-mF-dwy" customClass="StoryGridViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yNG-2u-RxU"/>
                         <viewControllerLayoutGuide type="bottom" id="VA1-zc-C8i"/>
@@ -278,7 +278,95 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJQ-CQ-2v3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-523" y="92"/>
+            <point key="canvasLocation" x="-370" y="-322"/>
+        </scene>
+        <!--Empty Story Grid-->
+        <scene sceneID="9W5-dI-enr">
+            <objects>
+                <viewController storyboardIdentifier="Empty Story Grid" title="Empty Story Grid" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q8s-N7-bc4" customClass="StoryGridViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ozd-AL-iQj"/>
+                        <viewControllerLayoutGuide type="bottom" id="0r6-ZO-hmX"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2Q3-4f-tgf">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cYb-Yn-FWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-370" y="-768"/>
+        </scene>
+        <!--Story View 1x4-->
+        <scene sceneID="SMt-Gy-pQE">
+            <objects>
+                <viewController storyboardIdentifier="Story View 1x4" title="Story View 1x4" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lN7-AK-6VH" customClass="StoryGridViewController" customModule="StoryViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jsa-aq-w0C"/>
+                        <viewControllerLayoutGuide type="bottom" id="ALf-f0-qMc"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2ae-Zx-n4e">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yed-N2-IcB">
+                                <rect key="frame" x="0.0" y="0.0" width="75" height="300"/>
+                                <connections>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="firstVideo" id="Wuk-nV-qhu"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ui-ib-CZy">
+                                <rect key="frame" x="75" y="0.0" width="75" height="300"/>
+                                <connections>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="secondVideo" id="hrz-S4-8aP"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLs-20-MG4">
+                                <rect key="frame" x="150" y="0.0" width="75" height="300"/>
+                                <connections>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="thirdVideo" id="Ptb-cN-hv6"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssu-R1-9zr">
+                                <rect key="frame" x="225" y="0.0" width="75" height="300"/>
+                                <connections>
+                                    <segue destination="sZt-jh-YOQ" kind="embed" identifier="fourthVideo" id="VaK-Od-eCL"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Ui-ib-CZy" firstAttribute="leading" secondItem="Yed-N2-IcB" secondAttribute="trailing" id="1eC-1c-Z0x"/>
+                            <constraint firstItem="mLs-20-MG4" firstAttribute="height" secondItem="Yed-N2-IcB" secondAttribute="height" id="4o8-IZ-Pgd"/>
+                            <constraint firstItem="mLs-20-MG4" firstAttribute="width" secondItem="Yed-N2-IcB" secondAttribute="width" id="6VJ-C9-zY6"/>
+                            <constraint firstItem="mLs-20-MG4" firstAttribute="height" secondItem="ssu-R1-9zr" secondAttribute="height" id="E6F-Bg-Vw6"/>
+                            <constraint firstItem="mLs-20-MG4" firstAttribute="height" secondItem="5Ui-ib-CZy" secondAttribute="height" id="HL9-h3-r80"/>
+                            <constraint firstItem="mLs-20-MG4" firstAttribute="top" secondItem="jsa-aq-w0C" secondAttribute="bottom" id="Rhd-me-eWg"/>
+                            <constraint firstItem="ssu-R1-9zr" firstAttribute="leading" secondItem="mLs-20-MG4" secondAttribute="trailing" id="Sag-ko-NHL"/>
+                            <constraint firstItem="ssu-R1-9zr" firstAttribute="top" secondItem="jsa-aq-w0C" secondAttribute="bottom" id="Tu1-qK-7j5"/>
+                            <constraint firstItem="Yed-N2-IcB" firstAttribute="top" secondItem="jsa-aq-w0C" secondAttribute="bottom" id="XT4-pk-b2E"/>
+                            <constraint firstItem="Yed-N2-IcB" firstAttribute="leading" secondItem="2ae-Zx-n4e" secondAttribute="leading" id="Zxf-h4-nJF"/>
+                            <constraint firstItem="mLs-20-MG4" firstAttribute="leading" secondItem="5Ui-ib-CZy" secondAttribute="trailing" id="bSA-rb-4FS"/>
+                            <constraint firstItem="5Ui-ib-CZy" firstAttribute="top" secondItem="jsa-aq-w0C" secondAttribute="bottom" id="e9K-tU-KaT"/>
+                            <constraint firstItem="mLs-20-MG4" firstAttribute="width" secondItem="5Ui-ib-CZy" secondAttribute="width" id="fw4-0p-GgC"/>
+                            <constraint firstItem="mLs-20-MG4" firstAttribute="width" secondItem="ssu-R1-9zr" secondAttribute="width" id="jUf-0Z-99c"/>
+                            <constraint firstItem="ALf-f0-qMc" firstAttribute="top" secondItem="Yed-N2-IcB" secondAttribute="bottom" id="jZb-lP-QI8"/>
+                            <constraint firstAttribute="trailing" secondItem="ssu-R1-9zr" secondAttribute="trailing" id="orN-PN-FuQ"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vct-K5-e7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="-322"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

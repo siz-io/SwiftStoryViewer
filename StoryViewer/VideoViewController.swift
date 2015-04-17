@@ -22,6 +22,12 @@ class VideoViewController: UIViewController {
                 playerItem.removeObserver(self, forKeyPath: "status")
             }
         }
+        didSet {
+            if let playerItem = videoPlayerItem {
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "play", name: AVPlayerItemDidPlayToEndTimeNotification, object: playerItem)
+                playerItem.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
+            }
+        }
     }
     
     var sourceURL: String? {
@@ -33,9 +39,14 @@ class VideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.hidesWhenStopped = true
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "play", name: UIApplicationDidBecomeActiveNotification, object: .None)
     }
     
     deinit {
+        if let playerItem = videoPlayerItem {
+            NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: playerItem)
+            playerItem.removeObserver(self, forKeyPath: "status")
+        }
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
@@ -49,8 +60,6 @@ class VideoViewController: UIViewController {
                 videoPlayer = AVPlayer(playerItem: playerItem)
                 if let player = videoPlayer {
                     player.actionAtItemEnd = .None
-                    NSNotificationCenter.defaultCenter().addObserver(self, selector: "play", name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayer?.currentItem)
-                    playerItem.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
                     playerView.videoPlayer = player
                     play()
                 }
