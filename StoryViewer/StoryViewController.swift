@@ -128,6 +128,7 @@ class StoryViewController: UIViewController {
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        super.didRotateFromInterfaceOrientation(fromInterfaceOrientation)
         updateUI()
     }
 }
