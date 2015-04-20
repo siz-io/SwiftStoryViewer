@@ -40,22 +40,20 @@ class StoryViewController: UIViewController {
             let screenRatio = Double(pixelCellSize.width)/Double(pixelCellSize.height)
             let nbCell = nbLines * nbColumns
             
+            let newWidth, newHeight: Int
             if(boxRatio > screenRatio)
             {
-                let newWidth = pixelCellSize.width,
-                widthRatio = Double(newWidth)/Double(videoBox.width),
+                newWidth = pixelCellSize.width
+                let widthRatio = Double(newWidth)/Double(videoBox.width)
                 newHeight = Int(Double(videoBox.height)*widthRatio)
-                let area = newWidth*newHeight*nbCell
-                println("grid=\(self) storyViewSize=\(storyViewSize.width)x\(storyViewSize.height) screenScale=\(screenScale) cellSize=\(pixelCellSize.width)x\(pixelCellSize.height) boxSize=\(videoBox.width)x\(videoBox.height) newBoxSize=\(newWidth)x\(newHeight) area=\(area)")
-                return area
             } else {
-                let newHeight = pixelCellSize.height,
-                heightRatio = Double(newHeight)/Double(videoBox.height),
+                newHeight = pixelCellSize.height
+                let heightRatio = Double(newHeight)/Double(videoBox.height)
                 newWidth = Int(Double(videoBox.width)*heightRatio)
-                let area = newWidth*newHeight*nbCell
-                println("grid=\(self) storyViewSize=\(storyViewSize.width)x\(storyViewSize.height) screenScale=\(screenScale) cellSize=\(pixelCellSize.width)x\(pixelCellSize.height) boxSize=\(videoBox.width)x\(videoBox.height) newBoxSize=\(newWidth)x\(newHeight) area=\(area)")
-                return area
             }
+            let area = newWidth*newHeight*nbCell
+            println("grid=\(self) storyViewSize=\(storyViewSize.width)x\(storyViewSize.height) screenScale=\(screenScale) cellSize=\(pixelCellSize.width)x\(pixelCellSize.height) boxSize=\(videoBox.width)x\(videoBox.height) newBoxSize=\(newWidth)x\(newHeight) area=\(area)")
+            return area
         }
         
         static let grids = [
